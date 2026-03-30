@@ -14,7 +14,13 @@ git remote set-url origin git@github.com:TalesOrigin/clone-any-repository.git
 
 git commit -m "init"
 
+{
+ssh-add keys-submodule/my_portable_key
 
+git push
+
+ssh-add -d keys-submodule/my_portable_key
+}
 set GIT_SSH_COMMAND=ssh -i my_portable_key && git push -u origin main && set GIT_SSH_COMMAND=
 
 set GIT_SSH_COMMAND=ssh -i my_portable_key && git clone git@github.com:TalesOrigin/Frost-Engine.git && set GIT_SSH_COMMAND=
